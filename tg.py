@@ -8,7 +8,7 @@ while True:
         api_id = 5091455  # задаем апи нашего аккаунта в телеграмм
         api_hash = '2d8ada7ff69cfb42880cd16ef2ebd4bd'  # задаем хеш нашего аккаунта в телеграмм
         keys = open('keys.txt', encoding='utf-8').read().split('\n')
-        client = TelegramClient('+84342567526', api_id, api_hash)  # собираем телеграм клиента
+        client = TelegramClient('+79944390051', api_id, api_hash)  # собираем телеграм клиента
         groups_ = open('links.txt').read().split('\n')
         group_main = open('mainchat.txt').read()
         groups = []
@@ -22,12 +22,12 @@ while True:
                 #client.loop.run_until_complete(client(JoinChannelRequest(group_main)))
             for group in groups_:
                 try:
-                    pass
                     #client.loop.run_until_complete(client(JoinChannelRequest(group)))
+                    pass
                 except telethon.errors.rpcerrorlist.FloodWaitError as e:
                     print(f'sleep {e.seconds} add in group')
                     sleep(e.seconds)
-                    client.loop.run_until_complete(client(JoinChannelRequest(group)))
+                    #client.loop.run_until_complete(client(JoinChannelRequest(group)))
                 try:
                     groups.append(client.loop.run_until_complete(client.get_entity(group)).id)
                     print(f'{group} ready')
