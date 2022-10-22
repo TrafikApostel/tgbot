@@ -41,6 +41,7 @@ while True:
                     for key in keys:
                         if key in event.message.message.lower():
                             await client.forward_messages(await client.get_entity(group_main), event.message)
+                            print('good')
                             break
             except Exception as e:  # Проверка групп и каналов
                 print("Error! " + str(e))
@@ -48,3 +49,4 @@ while True:
         client.run_until_disconnected()  # назначаем ему бесконечный цикл выполнения
     except Exception as e:  # Проверка групп и каналов
         print("Error! " + str(e))
+        sleep(10)
