@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import datetime
 from random import uniform
 from time import sleep
@@ -11,7 +12,12 @@ while True:
     try:
         api_id = 5091455  # задаем апи нашего аккаунта в телеграмм
         api_hash = '2d8ada7ff69cfb42880cd16ef2ebd4bd'  # задаем хеш нашего аккаунта в телеграмм
-        keys = open('keys.txt', encoding='utf-8').read().split('\n')
+        keys = ['инфограф',
+'дизайн карточки',
+'рич контент',
+'дизайнер',
+'ищу дизайнера',
+'графический дизайнер']
         client = TelegramClient('+79859013501', api_id, api_hash)  # собираем телеграм клиента
         groups_ = open('links.txt').read().split('\n')
         group_main = open('mainchat.txt').read()
@@ -38,6 +44,7 @@ while True:
                 if event.message.peer_id.channel_id in groups:
                     for key in keys:
                         if key in event.message.message.lower():
+                            print(event.message.message)
                             print('gg')
                             await client.forward_messages(group_m, event.message)
                             print('good')
