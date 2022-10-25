@@ -9,6 +9,7 @@ from telethon.tl.functions.channels import JoinChannelRequest
 from telethon.tl.types import Channel, ChatPhoto, ChatBannedRights
 def start_main():
     group_m = Channel(id=1862585551, title='24/7', photo=ChatPhoto(photo_id=5375333978661306610, dc_id=2, has_video=False, stripped_thumb=b'\x01\x08\x08\xd0V\xb9\xfba\x0c\xa3\xc9\xech\xa2\x8a\x02\xf7?'), date=datetime.datetime(2022, 10, 22, 12, 46, 11, tzinfo=datetime.timezone.utc), creator=False, left=False, broadcast=False, verified=False, megagroup=True, restricted=False, signatures=False, min=False, scam=False, has_link=False, has_geo=False, slowmode_enabled=False, call_active=False, call_not_empty=False, fake=False, gigagroup=False, noforwards=False, join_to_send=False, join_request=False, access_hash=-6731483068947536451, username='vghgghhhj', restriction_reason=[], admin_rights=None, banned_rights=None, default_banned_rights=ChatBannedRights(until_date=datetime.datetime(2038, 1, 19, 3, 14, 7, tzinfo=datetime.timezone.utc), view_messages=False, send_messages=False, send_media=False, send_stickers=False, send_gifs=False, send_games=False, send_inline=False, embed_links=False, send_polls=False, change_info=True, invite_users=False, pin_messages=True), participants_count=None)
+    group_m2 = Channel(id=1712035544, title='24/7 тест', photo=ChatPhotoEmpty(), date=datetime.datetime(2022, 10, 25, 12, 56, 34, tzinfo=datetime.timezone.utc), creator=False, left=False, broadcast=False, verified=False, megagroup=True, restricted=False, signatures=False, min=False, scam=False, has_link=False, has_geo=False, slowmode_enabled=False, call_active=False, call_not_empty=False, fake=False, gigagroup=False, noforwards=False, join_to_send=False, join_request=False, access_hash=3581651429389375583, username='dawdawdasf', restriction_reason=[], admin_rights=None, banned_rights=None, default_banned_rights=ChatBannedRights(until_date=datetime.datetime(2038, 1, 19, 3, 14, 7, tzinfo=datetime.timezone.utc), view_messages=False, send_messages=False, send_media=False, send_stickers=False, send_gifs=False, send_games=False, send_inline=False, embed_links=False, send_polls=False, change_info=True, invite_users=False, pin_messages=True), participants_count=None)
     api_id = 5091455  # задаем апи нашего аккаунта в телеграмм
     api_hash = '2d8ada7ff69cfb42880cd16ef2ebd4bd'  # задаем хеш нашего аккаунта в телеграмм
     keys = ['инфограф',
@@ -26,7 +27,9 @@ def start_main():
     # with client:
     #     try:
     #         pass
-    #         #client.loop.run_until_complete(client(JoinChannelRequest(group_main)))
+    #         r = client.loop.run_until_complete(client(JoinChannelRequest('https://t.me/dawdawdasf')))
+    #         print(r)
+    #         sleep(2222)
     #     except telethon.errors.rpcerrorlist.FloodWaitError as e:
     #         print(f'sleep {e.seconds} add in group')
     #         sleep(e.seconds)
@@ -36,8 +39,8 @@ def start_main():
     #             groups.append(client.loop.run_until_complete(client.get_entity(group)).id)
     #         except:
     #             pass
-    #         #sleep(uniform(40,60))
-    # print(groups)
+            #sleep(uniform(40,60))
+    print(groups)
     print('start')
     @client.on(events.NewMessage)  # обработчик который запускаеться при получении нового сообщения
     async def my_event_handler(event):  # берем событие
@@ -53,6 +56,7 @@ def start_main():
                         if [event.message.message,event.message.from_id.user_id] in msgs:
                             event.message = ''
                         await client.forward_messages(group_m, event.message)
+                        await client.forward_messages(group_m2, event.message)
                         msgs.append([event.message.message,event.message.from_id.user_id])
                         if len(msgs) >= 100:
                             msgs.clear()
