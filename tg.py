@@ -14,7 +14,7 @@ def start_main():
     group_m2 = Channel(id=1712035544, title='24/7 тест', photo=ChatPhoto(photo_id=5384263323043874254, dc_id=2, has_video=False, stripped_thumb=b'\x01\x08\x08l\xd1\xb2\xab\x10\x17\x8eG\x14QE!\x9f'), date=datetime.datetime(2022, 10, 25, 12, 56, 34, tzinfo=datetime.timezone.utc), creator=False, left=False, broadcast=False, verified=False, megagroup=True, restricted=False, signatures=False, min=False, scam=False, has_link=False, has_geo=False, slowmode_enabled=False, call_active=False, call_not_empty=False, fake=False, gigagroup=False, noforwards=False, join_to_send=False, join_request=False, access_hash=3581651429389375583, username='dawdawdasf', restriction_reason=[], admin_rights=None, banned_rights=None, default_banned_rights=ChatBannedRights(until_date=datetime.datetime(2038, 1, 19, 3, 14, 7, tzinfo=datetime.timezone.utc), view_messages=False, send_messages=False, send_media=False, send_stickers=False, send_gifs=False, send_games=False, send_inline=False, embed_links=False, send_polls=False, change_info=True, invite_users=False, pin_messages=True), participants_count=None)
     api_id = 5091455  # задаем апи нашего аккаунта в телеграмм
     api_hash = '2d8ada7ff69cfb42880cd16ef2ebd4bd'  # задаем хеш нашего аккаунта в телеграмм
-    keys = ['инфограф',
+    keys = ['логотип','банер','карточка','видео','инфограф',
     'дизайн карточки',
     'рич контент',
     'дизайнер',
