@@ -72,4 +72,8 @@ def start_main():
     client.start()  # запускаем нашего клиента
     client.run_until_disconnected()  # назначаем ему бесконечный цикл выполнения
 if __name__ == '__main__':
-    start_main()
+    while True:
+        try:
+            start_main()
+        except:
+            pass
